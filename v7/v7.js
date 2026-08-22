@@ -206,7 +206,7 @@
     state.panel = null;
 
     if (clearHash) {
-      window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+      window.history.replaceState(null, "", window.location.href.split("#")[0]);
     }
 
     if (restoreFocus) previousButton?.focus();
