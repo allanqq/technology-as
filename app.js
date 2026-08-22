@@ -33,6 +33,14 @@
   document.querySelector(".header-note")?.replaceChildren("A field guide for reflective technologists");
   const intro = document.querySelector(".orientation-copy p");
   if (intro) intro.innerHTML = "100 lenses for turning philosophy of technology into <strong>better technical judgment.</strong>";
+  const collectionLink = document.querySelector(".orientation-copy a");
+  if (collectionLink) {
+    const instrumentLink = document.createElement("a");
+    instrumentLink.className = "instrument-entry";
+    instrumentLink.href = "./instrument/";
+    instrumentLink.innerHTML = 'Use the decision instrument <span aria-hidden="true">→</span>';
+    collectionLink.before(instrumentLink);
+  }
 
   function updateUrl() {
     const next = new URLSearchParams();

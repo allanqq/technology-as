@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Decision Lens — Technology as…</title>
+  <meta name="description" content="Turn a live technical decision into a structured critical reflection and a concrete intervention plan.">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="../technology-as-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./instrument.css">
+  <script src="./instrument.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#decision-form">Skip to the decision instrument</a>
+
+  <header class="topbar">
+    <a class="brand" href="../index.html" aria-label="Technology as, return to lens library">
+      <span class="brand-mark">T<span>/</span>A</span>
+      <span>Technology as…</span>
+    </a>
+    <p>Decision instrument <span aria-hidden="true">/</span> experimental</p>
+    <nav aria-label="Instrument navigation">
+      <a href="../index.html#collection">Browse 100 lenses</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">From philosophy to technical judgment</p>
+        <h1 id="page-title">Name the decision.<br><em>Expose what it embeds.</em></h1>
+        <p class="lede">Describe what you are building and the choice in front of you. The instrument surfaces a diverse stack of philosophical lenses, then converts reflection into interventions you can test.</p>
+      </div>
+      <div class="hero-method" aria-label="Method">
+        <p class="method-label">Working method</p>
+        <ol>
+          <li><span>01</span> System</li>
+          <li><span>02</span> Choice</li>
+          <li><span>03</span> Lenses</li>
+          <li><span>04</span> Intervention</li>
+          <li><span>05</span> Test</li>
+        </ol>
+        <p class="privacy-note"><strong>Local prototype.</strong> Your text stays in this browser and is not sent to an AI model.</p>
+      </div>
+    </section>
+
+    <section class="frame-section" id="frame">
+      <div class="section-heading">
+        <p class="section-index">01 / Frame</p>
+        <div>
+          <h2>What are you building or deciding?</h2>
+          <p>Specificity produces better challenges. Name the actual system, the live decision, and the people who may bear its consequences.</p>
+        </div>
+      </div>
+
+      <div class="intake-layout">
+        <form id="decision-form" class="decision-form">
+          <label class="field field-wide" for="system-input">
+            <span>System or product <b>required</b></span>
+            <textarea id="system-input" name="system" rows="3" required placeholder="Example: An AI support agent that can issue refunds and send customer emails."></textarea>
+          </label>
+
+          <label class="field field-wide" for="decision-input">
+            <span>Live technical decision <b>required</b></span>
+            <textarea id="decision-input" name="decision" rows="4" required placeholder="Example: Whether the agent should act autonomously below a dollar threshold or always request human confirmation."></textarea>
+          </label>
+
+          <label class="field" for="stakeholders-input">
+            <span>Who can be affected?</span>
+            <textarea id="stakeholders-input" name="stakeholders" rows="3" placeholder="Customers, support staff, managers, people misclassified by the model…"></textarea>
+          </label>
+
+          <label class="field" for="constraints-input">
+            <span>What makes the decision hard?</span>
+            <textarea id="constraints-input" name="constraints" rows="3" placeholder="Latency, cost, regulation, launch pressure, limited data, organizational incentives…"></textarea>
+          </label>
+
+          <fieldset class="domain-fieldset field-wide">
+            <legend>Where does the decision live? <span>Select any</span></legend>
+            <div class="domain-grid">
+              <label><input type="checkbox" name="domain" value="ai-models"><span>AI / models</span></label>
+              <label><input type="checkbox" name="domain" value="product-interface"><span>Product / interface</span></label>
+              <label><input type="checkbox" name="domain" value="data-infrastructure"><span>Data / infrastructure</span></label>
+              <label><input type="checkbox" name="domain" value="organization-workflow"><span>Organization / workflow</span></label>
+              <label><input type="checkbox" name="domain" value="policy-governance"><span>Policy / governance</span></label>
+              <label><input type="checkbox" name="domain" value="hardware-physical"><span>Hardware / physical world</span></label>
+            </div>
+          </fieldset>
+
+          <div class="form-actions field-wide">
+            <button class="primary-action" type="submit">Interrogate this decision <span aria-hidden="true">→</span></button>
+            <p id="engine-status" role="status" aria-live="polite">The engine will rank all 100 lenses and deliberately diversify the result.</p>
+          </div>
+        </form>
+
+        <aside class="examples" aria-labelledby="examples-title">
+          <p class="aside-label" id="examples-title">Start from a live case</p>
+          <button type="button" class="example-button" data-example="agent">
+            <span>AI agent authority</span>
+            <p>How much autonomous action should an agent receive?</p>
+          </button>
+          <button type="button" class="example-button" data-example="metric">
+            <span>Engagement metric</span>
+            <p>Should a product team optimize time spent?</p>
+          </button>
+          <button type="button" class="example-button" data-example="infrastructure">
+            <span>Compute infrastructure</span>
+            <p>Which operational costs remain outside the architecture?</p>
+          </button>
+          <p class="examples-note">These examples are deliberately ordinary. The instrument is meant for choices made in roadmaps, pull requests, architecture reviews, launch gates, and policy discussions.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="results-section" id="results" hidden aria-labelledby="results-title">
+      <div class="section-heading results-heading">
+        <p class="section-index">02 / Challenge</p>
+        <div>
+          <h2 id="results-title">Your critical lens stack</h2>
+          <p>Not a verdict. A deliberately varied set of perspectives that should make the decision harder in useful ways.</p>
+        </div>
+      </div>
+
+      <div class="decision-snapshot" aria-label="Decision snapshot">
+        <div>
+          <span>System</span>
+          <p id="snapshot-system"></p>
+        </div>
+        <div>
+          <span>Decision</span>
+          <p id="snapshot-decision"></p>
+        </div>
+      </div>
+
+      <div class="signal-bar">
+        <p><span>Signals detected</span> <strong id="signal-summary">Loading…</strong></p>
+        <button type="button" id="revise-button">Revise frame ↑</button>
+      </div>
+
+      <div id="lens-stack" class="lens-stack" aria-live="polite"></div>
+    </section>
+
+    <section class="action-section" id="action" hidden aria-labelledby="action-title">
+      <div class="section-heading">
+        <p class="section-index">03 / Act</p>
+        <div>
+          <h2 id="action-title">Turn reflection into a decision change</h2>
+          <p>The selected lenses become a review brief. Capture what they reveal, what will change, and how the change will be tested.</p>
+        </div>
+      </div>
+
+      <div class="action-layout">
+        <div>
+          <p class="aside-label">Selected lenses</p>
+          <div id="selected-summary" class="selected-summary"></div>
+          <p class="selection-guidance">Select up to four lenses. Three are preselected to create a balanced starting stack.</p>
+        </div>
+
+        <div class="decision-canvas">
+          <label class="field" for="change-input">
+            <span>What must change before this decision is complete?</span>
+            <textarea id="change-input" rows="5" placeholder="Name the design, engineering, governance, measurement, or deployment change you are willing to make."></textarea>
+          </label>
+          <label class="field" for="test-input">
+            <span>What evidence would show the intervention worked?</span>
+            <textarea id="test-input" rows="4" placeholder="A user study, failure threshold, audit log, reversal test, accessibility check, resource budget, incident drill…"></textarea>
+          </label>
+          <div class="owner-row">
+            <label class="field" for="owner-input">
+              <span>Decision owner</span>
+              <input id="owner-input" type="text" placeholder="Name or role">
+            </label>
+            <label class="field" for="review-input">
+              <span>Review date</span>
+              <input id="review-input" type="date">
+            </label>
+          </div>
+          <div class="export-actions">
+            <button type="button" class="primary-action" id="copy-brief">Copy decision brief</button>
+            <button type="button" class="secondary-action" id="download-brief">Download Markdown</button>
+            <button type="button" class="text-action" id="reset-instrument">Start a new decision</button>
+          </div>
+          <p id="export-status" class="export-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Technology as… is a collection of critical lenses for technologists.</p>
+    <a href="../index.html#collection">Return to the 100-lens library <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>
