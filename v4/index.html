@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f7f7f4">
+  <title>Critical Technology — 100 lenses for thinking about what we build</title>
+  <meta name="description" content="A field of 100 philosophical lenses for questioning what technology makes possible, normal, and invisible.">
+  <meta property="og:title" content="Critical Technology">
+  <meta property="og:description" content="100 philosophical lenses for thinking about what we build.">
+  <meta property="og:image" content="../og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../technology-as-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./v4.css">
+  <script src="./v4.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#lens-field">Skip to the lens field</a>
+
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Critical Technology, home">
+      <span class="brand-mark" aria-hidden="true">CT</span>
+      <span>Critical Technology</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <button class="text-button" id="random-lens" type="button">Random lens</button>
+      <a href="#weekly">Weekly reflection</a>
+      <a href="../index.html">Source library ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">A field of 100 philosophical lenses</p>
+      <h1 id="page-title">Think before technology becomes normal.</h1>
+      <div class="hero-note">
+        <p>Notice what a system changes, hides, and makes difficult to undo.</p>
+        <a href="#lens-field">Choose a word ↓</a>
+      </div>
+    </section>
+
+    <section class="lens-field" id="lens-field" aria-labelledby="field-title">
+      <div class="field-topline">
+        <div>
+          <h2 id="field-title">Ways of seeing</h2>
+          <output id="field-status" aria-live="polite">Loading the field…</output>
+        </div>
+        <label class="search-control" for="lens-search">
+          <span>Find</span>
+          <input id="lens-search" type="search" autocomplete="off" placeholder="power, care, labor…">
+        </label>
+      </div>
+
+      <div class="dimension-filter" role="group" aria-label="Filter lenses by critical dimension">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="power" aria-pressed="false">Power</button>
+        <button type="button" data-filter="knowledge" aria-pressed="false">Knowledge</button>
+        <button type="button" data-filter="agency" aria-pressed="false">Agency</button>
+        <button type="button" data-filter="material" aria-pressed="false">Material</button>
+        <button type="button" data-filter="time" aria-pressed="false">Time</button>
+        <button type="button" data-filter="responsibility" aria-pressed="false">Responsibility</button>
+      </div>
+
+      <div class="lens-cloud" id="lens-cloud" aria-live="polite" aria-busy="true"></div>
+
+      <div class="load-error" id="load-error" hidden>
+        <p>The lens field could not be loaded.</p>
+        <a href="../index.html">Open the complete source library ↗</a>
+      </div>
+    </section>
+
+    <section class="weekly" id="weekly" aria-labelledby="weekly-title">
+      <div class="weekly-copy">
+        <p class="eyebrow">Weekly reflection</p>
+        <h2 id="weekly-title">One critical question each week.</h2>
+        <p>Philosophy for people who build, govern, and live with technology. No news cycle. No hype.</p>
+      </div>
+      <div class="subscribe-shell">
+        <iframe
+          src="https://nfutures.substack.com/embed?utm_source=critical_technology&amp;utm_medium=web&amp;utm_campaign=v4"
+          title="Subscribe to Necessary Futures"
+          width="100%"
+          height="320"
+          loading="lazy"
+          scrolling="no"
+          frameborder="0"></iframe>
+        <p class="subscribe-fallback">
+          Form not visible? <a href="https://nfutures.substack.com/subscribe" target="_blank" rel="noopener noreferrer">Subscribe on Substack ↗</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Critical thinking before technical choices harden into infrastructure.</p>
+    <p>No score. No verdict. Human judgment remains accountable.</p>
+  </footer>
+
+  <dialog class="lens-dialog" id="lens-dialog" aria-labelledby="lens-title">
+    <div class="dialog-frame">
+      <div class="dialog-topbar">
+        <button class="back-button" id="close-lens" type="button">← All words</button>
+        <div class="dialog-utilities">
+          <button class="text-button" id="copy-link" type="button">Copy link</button>
+          <button class="icon-button" id="dialog-close-icon" type="button" aria-label="Close lens">×</button>
+        </div>
+      </div>
+
+      <article class="lens-focus">
+        <header class="lens-heading">
+          <div class="lens-meta">
+            <p id="lens-dimension">Critical dimension</p>
+            <p id="lens-count">Lens 00 of 100</p>
+          </div>
+          <h2 id="lens-title">Lens</h2>
+        </header>
+
+        <div class="lens-reading">
+          <p id="lens-interpretation"></p>
+          <blockquote id="lens-question"></blockquote>
+        </div>
+
+        <div class="lens-actions">
+          <button class="primary-link" id="apply-lens" type="button">Apply this lens →</button>
+          <button class="text-button" id="next-lens" type="button">Another word</button>
+          <output id="link-status" aria-live="polite"></output>
+        </div>
+
+        <section class="reflection" id="reflection" hidden aria-labelledby="reflection-title">
+          <div class="reflection-heading">
+            <p class="eyebrow">Apply the lens</p>
+            <h3 id="reflection-title">Complete three lines.</h3>
+          </div>
+
+          <div class="reflection-lines">
+            <label>
+              <span>I am deciding</span>
+              <textarea id="decision-input" rows="2" placeholder="What technical choice is still open?"></textarea>
+            </label>
+            <label>
+              <span>This lens makes visible</span>
+              <textarea id="visible-input" rows="2" placeholder="What assumption, consequence, or affected person was easy to miss?"></textarea>
+            </label>
+            <label>
+              <span>So I will change</span>
+              <textarea id="change-input" rows="2" placeholder="Name one concrete change to the design, metric, permission, rollout, or governance."></textarea>
+            </label>
+          </div>
+
+          <div class="reflection-actions">
+            <button class="primary-link" id="copy-reflection" type="button">Copy reflection →</button>
+            <button class="text-button" id="clear-reflection" type="button">Clear</button>
+            <output id="reflection-status" aria-live="polite"></output>
+          </div>
+
+          <a class="weekly-invite" id="weekly-invite" href="#weekly" hidden>Continue with one question each week ↘</a>
+        </section>
+      </article>
+    </div>
+  </dialog>
+
+  <noscript>
+    <div class="noscript-note">
+      <p>This field requires JavaScript to organize the 100 lenses.</p>
+      <a href="../index.html">Open the complete source library ↗</a>
+    </div>
+  </noscript>
+</body>
+</html>
