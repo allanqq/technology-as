@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A lean decision lens for applying philosophy of technology to technical choices.">
+  <title>Decision Lens — Technology as…</title>
+  <link rel="icon" href="../technology-as-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./v3.css">
+  <script defer src="./v3.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the decision lens</a>
+
+  <header class="topbar">
+    <a class="mark" href="../index.html" aria-label="Technology as, home">T<span>/</span>A</a>
+    <p>Decision Lens <span>V3</span></p>
+    <a href="../index.html#collection">100 lenses ↗</a>
+  </header>
+
+  <main id="main">
+    <section class="step frame-step" id="frame-step" aria-labelledby="frame-title">
+      <p class="kicker">One decision. Three lenses. One change.</p>
+      <h1 id="frame-title">What are you deciding?</h1>
+
+      <form id="decision-form">
+        <label class="sr-only" for="decision">The technical decision</label>
+        <textarea id="decision" required maxlength="600" placeholder="Should our AI agent issue refunds without human approval?"></textarea>
+
+        <details class="context-box">
+          <summary>Add context <span>optional</span></summary>
+          <label for="context">Who is affected, and what constraints matter?</label>
+          <textarea id="context" maxlength="600" placeholder="Customers, support staff, fraud risk, response time, and unclear accountability."></textarea>
+        </details>
+
+        <div class="form-actions">
+          <button class="primary" type="submit">Find three lenses <span aria-hidden="true">→</span></button>
+          <button class="text-button" id="example-button" type="button">Use an example</button>
+        </div>
+        <p class="status" id="engine-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="step results-step" id="results-step" aria-labelledby="results-title" hidden>
+      <div class="step-header">
+        <div>
+          <p class="kicker">Choose one</p>
+          <h2 id="results-title">Three ways to see it.</h2>
+        </div>
+        <button class="text-button" id="revise-button" type="button">← Revise decision</button>
+      </div>
+      <div class="lens-grid" id="lens-grid"></div>
+    </section>
+
+    <section class="step change-step" id="change-step" aria-labelledby="change-title" hidden>
+      <button class="text-button back-button" id="back-to-lenses" type="button">← Choose another lens</button>
+
+      <div class="chosen-lens">
+        <p class="kicker" id="chosen-dimension">Selected lens</p>
+        <h2 id="change-title">Technology as <span id="chosen-name"></span></h2>
+        <p class="chosen-question" id="chosen-question"></p>
+      </div>
+
+      <label class="change-field" for="change">
+        <span>What changes?</span>
+        <textarea id="change" maxlength="800" placeholder="Change a permission, metric, interface, architecture, safeguard, rollout, or owner."></textarea>
+      </label>
+
+      <div class="form-actions">
+        <button class="primary" id="copy-button" type="button">Copy reflection <span aria-hidden="true">→</span></button>
+        <button class="text-button" id="reset-button" type="button">Start over</button>
+      </div>
+      <p class="status" id="copy-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Local to this browser. No score. No verdict.</p>
+  </footer>
+</body>
+</html>
