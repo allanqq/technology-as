@@ -37,8 +37,8 @@
   if (collectionLink) {
     const instrumentLink = document.createElement("a");
     instrumentLink.className = "instrument-entry";
-    instrumentLink.href = "./instrument/";
-    instrumentLink.innerHTML = 'Use the decision instrument <span aria-hidden="true">→</span>';
+    instrumentLink.href = "./v3/";
+    instrumentLink.innerHTML = 'Try the lean decision lens <span aria-hidden="true">→</span>';
     collectionLink.before(instrumentLink);
   }
 
