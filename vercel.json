@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/source.html",
+      "destination": "https://raw.githubusercontent.com/allanqq/technology-as/64c31da11db8f95bc1fdbba2efdc8d7de9f933e9/source.html",
+      "permanent": false
+    }
+  ]
+}
