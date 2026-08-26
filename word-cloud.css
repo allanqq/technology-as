@@ -27,16 +27,49 @@ button { font: inherit; color: inherit; }
 a { color: inherit; }
 ::selection { background: var(--accent); color: white; }
 
+.header {
+  flex: 0 0 auto;
+  min-height: 3rem;
+  padding: .7rem var(--gutter);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--muted);
+  font-size: .61rem;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+}
+
+.header-title {
+  width: max-content;
+  color: var(--ink);
+  font-weight: 560;
+  text-decoration: none;
+}
+
+.header-subtitle {
+  margin: 0;
+  text-align: right;
+}
+
+.header-title:hover,
+.header-title:focus-visible,
+.footer a:hover,
+.footer a:focus-visible {
+  color: var(--accent);
+}
+
 .field {
   flex: 1;
-  min-height: calc(100svh - 2.35rem);
+  min-height: 0;
   padding: clamp(1.5rem, 3vw, 3.5rem) var(--gutter);
   display: flex;
 }
 
 .cloud {
   width: 100%;
-  min-height: calc(100svh - 8rem);
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -156,7 +189,13 @@ a { color: inherit; }
 }
 
 .footer span:nth-child(2) { justify-self: center; }
-.footer span:last-child { justify-self: end; }
+
+.footer a {
+  justify-self: end;
+  text-align: right;
+  text-decoration: none;
+  transition: color .14s ease;
+}
 
 .load-error,
 .noscript-note {
@@ -175,10 +214,16 @@ a:focus-visible {
 }
 
 @media (max-width: 720px) {
+  .header {
+    grid-template-columns: 1fr;
+    gap: .25rem;
+  }
+
+  .header-subtitle { text-align: left; }
+
   .field { padding-top: 1.25rem; }
 
   .cloud {
-    min-height: calc(100svh - 6rem);
     align-content: center;
     gap: .8rem 1.25rem;
   }
@@ -203,10 +248,23 @@ a:focus-visible {
   .footer span:nth-child(2) { display: none; }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
+  .header,
+  .footer,
   .field { padding-inline: .85rem; }
+
   .cloud { gap: .72rem 1rem; }
-  .footer { padding-inline: .85rem; }
+
+  .footer {
+    grid-template-columns: 1fr;
+    gap: .4rem;
+    padding-block: .72rem;
+  }
+
+  .footer a {
+    justify-self: start;
+    text-align: left;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
