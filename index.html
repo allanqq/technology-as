@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#f5f5f1">
-  <title>Critical Technology — 100 ways of seeing</title>
+  <title>Technology as… — 100 ways of seeing</title>
   <meta name="description" content="A field of 100 philosophical lenses for seeing technology differently.">
-  <meta property="og:title" content="Critical Technology">
+  <meta property="og:title" content="Technology as…">
   <meta property="og:description" content="100 ways of seeing technology differently.">
   <meta property="og:image" content="./og.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -16,6 +16,11 @@
   <script src="./word-cloud.js" defer></script>
 </head>
 <body>
+  <header class="header">
+    <a class="header-title" href="./" aria-label="Technology as home">Technology as…</a>
+    <p class="header-subtitle">100 ways of seeing technology differently</p>
+  </header>
+
   <main class="field" aria-label="100 critical lenses on technology">
     <div class="cloud" id="lens-cloud" aria-live="polite" aria-busy="true"></div>
 
@@ -26,9 +31,9 @@
   </main>
 
   <footer class="footer">
-    <span>Critical Technology</span>
+    <span>Created by Allan Qiu</span>
     <span id="field-status" aria-live="polite">Loading 100 lenses…</span>
-    <span>Select a word</span>
+    <a href="https://aria.ski" target="_blank" rel="noopener noreferrer">A project by Aria Innovation Engine ↗</a>
   </footer>
 
   <template id="lens-panel-template">
