@@ -5,76 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#f4f3ee">
-  <title>Technology as — a radial instrument</title>
-  <meta name="description" content="Turn through 100 lenses for seeing what technology makes possible, normal, and invisible.">
-  <meta property="og:title" content="Technology as — a radial instrument">
-  <meta property="og:description" content="Turn through 100 lenses for seeing technology differently.">
-  <meta property="og:image" content="./og.png">
-  <meta name="twitter:card" content="summary_large_image">
+  <title>Technology as</title>
+  <meta name="description" content="Technology as — a radial field of lenses.">
   <link rel="icon" href="./technology-as-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./radial-dial.css">
   <script src="./radial-dial.js" defer></script>
 </head>
 <body>
-  <header class="masthead">
-    <div class="brand">Critical Technology</div>
-    <div class="masthead-meta" aria-label="Experience metadata">
-      <span>100 lenses</span>
-      <span>Radial instrument · 08</span>
+  <main
+    class="dial"
+    id="dial"
+    role="listbox"
+    tabindex="0"
+    aria-label="Technology as lenses. Scroll or drag to turn the radial dial."
+    aria-busy="true"
+  >
+    <div class="dial-face" aria-hidden="true"></div>
+    <div class="dial-ticks" id="dial-ticks" aria-hidden="true"></div>
+    <div class="dial-words" id="dial-words"></div>
+
+    <div class="phrase" aria-live="polite" aria-atomic="true">
+      <span class="phrase-prefix">Technology as</span>
+      <span class="phrase-word" id="current-word"></span>
     </div>
-  </header>
 
-  <main class="experience">
-    <section class="dial-stage" aria-labelledby="page-title">
-      <h1 class="visually-hidden" id="page-title">Technology as — 100 radial lenses</h1>
-
-      <div
-        class="dial-instrument"
-        id="dial-instrument"
-        role="listbox"
-        tabindex="0"
-        aria-label="Technology as lenses. Scroll, drag the dial, or use the arrow keys to turn it."
-        aria-busy="true"
-      >
-        <div class="dial-face" aria-hidden="true"></div>
-        <div class="dial-ticks" id="dial-ticks" aria-hidden="true"></div>
-        <div class="dial-words" id="dial-words"></div>
-
-        <div class="phrase-anchor" aria-live="polite" aria-atomic="true">
-          <span class="phrase-prefix">Technology as</span>
-          <span class="phrase-word" id="current-word">loading…</span>
-        </div>
-
-        <div class="focus-index" aria-hidden="true">
-          <span></span>
-        </div>
-      </div>
-
-      <div class="loading-note" id="loading-note">Loading the lens field…</div>
-      <div class="load-error" id="load-error" hidden>
-        <p>The lens field could not be loaded.</p>
-        <button type="button" id="retry-button">Retry</button>
-      </div>
-    </section>
-
-    <aside class="lens-details" id="lens-details" aria-label="Selected lens">
-      <div class="lens-meta">
-        <span id="lens-count">— / 100</span>
-        <span id="lens-dimension">Lens</span>
-      </div>
-      <p class="lens-interpretation" id="lens-interpretation">Turn the dial to see technology differently.</p>
-      <blockquote class="lens-question" id="lens-question">What becomes visible when the frame changes?</blockquote>
-    </aside>
+    <span class="visually-hidden" id="status" aria-live="polite"></span>
   </main>
-
-  <footer class="footer">
-    <span class="interaction-hint">Scroll · drag · arrow keys</span>
-    <button class="random-button" id="random-button" type="button" disabled>Random lens</button>
-    <span class="position-readout" id="position-readout" aria-hidden="true">000°</span>
-  </footer>
-
-  <noscript>
-    <div class="noscript-note">JavaScript is required to turn the radial lens instrument.</div>
-  </noscript>
 </body>
 </html>
